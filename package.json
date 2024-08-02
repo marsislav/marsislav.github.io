@@ -8,17 +8,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/marsislav/jsPage.git"
+    "url": "git+https://github.com/marsislav/marsislav.github.io.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/marsislav/jsPage/issues"
+    "url": "https://github.com/marsislav/marsislav.github.io/issues"
   },
-  "homepage": "https://github.com/marsislav/jsPage#readme",
+  "homepage": "https://marsislav.github.io",
   "dependencies": {
-    "gh-pages": "^6.1.1",
-    "ghpages": "^0.0.10"
+    "gh-pages": "^6.1.1"
   }
 }
