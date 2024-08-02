@@ -1,14 +1,83 @@
 const toggleSwitch = document.querySelector('input[type="checkbox"]');
+const toggleIcon = document.getElementById("toggle-icon");
 
+function darkMode() {
+  nav.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+  let image = document.querySelector(".introPic");
+  image.src = "img/introDark.png";
+  image.style.boxShadow =
+    "rgba(255, 255, 255, 0.1) 0px 10px 15px -3px, rgba(255, 255, 255, 0.05) 0px 4px 6px -2px";
+  toggleIcon.children[0].classList.remove("fa-sun");
+  toggleIcon.children[0].classList.add("fa-moon");
+
+  //
+  // Check if the style tag already exists
+  let styleTag = document.getElementById("dynamicStyles");
+  if (!styleTag) {
+    // Create a new style tag
+    styleTag = document.createElement("style");
+    styleTag.id = "dynamicStyles";
+    document.head.appendChild(styleTag);
+  }
+
+  // Set the new styles for the pseudo-elements
+  styleTag.innerHTML = `
+      .roundedPhoto::before,
+      .roundedPhoto::after {
+        background-color: rgb(15,65,255);
+      }
+    `;
+}
+
+function lightMode() {
+  nav.style.backgroundColor = "rgba(255, 255, 255, 0.5)";
+  let image = document.querySelector(".introPic");
+  image.src = "img/introLight.png";
+  image.style.boxShadow =
+    "rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px";
+  toggleIcon.children[0].classList.remove("fa-moon");
+  toggleIcon.children[0].classList.add("fa-sun");
+
+  //
+  // Check if the style tag already exists
+  let styleTag = document.getElementById("dynamicStyles");
+  if (!styleTag) {
+    // Create a new style tag
+    styleTag = document.createElement("style");
+    styleTag.id = "dynamicStyles";
+    document.head.appendChild(styleTag);
+  }
+
+  // Set the new styles for the pseudo-elements
+  styleTag.innerHTML = `
+      .roundedPhoto::before,
+      .roundedPhoto::after {
+        background-color: #e44848 }
+    `;
+}
 function switchTheme(event) {
   if (event.target.checked) {
     document.documentElement.setAttribute("data-theme", "dark");
+    localStorage.setItem("theme", "dark");
+    darkMode();
   } else {
     document.documentElement.setAttribute("data-theme", "light");
+    localStorage.setItem("theme", "light");
+    lightMode();
   }
 }
 
 toggleSwitch.addEventListener("change", switchTheme);
+
+//Check LocalStorage for Theme
+const currentTheme = localStorage.getItem("theme");
+if (currentTheme) {
+  document.documentElement.setAttribute("data-theme", currentTheme);
+  if (currentTheme === "dark") {
+    toggleSwitch.checked = true;
+    darkMode();
+  }
+}
 
 //Mobile menu
 function toggleMenu() {
@@ -20,6 +89,7 @@ function toggleMenu() {
 // Translations
 const translations = {
   bg: {
+    mainTitle: "Мирослав Костадинов (Марсислав) - Портфолио",
     homeMenu: "Начало",
     aboutMenu: "За мен",
     projectsMenu: "Проекти",
@@ -68,6 +138,7 @@ const translations = {
     contactsDesc: "Мирослав Костадинов, +359879445023",
   },
   en: {
+    mainTitle: "Miroslav Kostadinov (Marsislav) - Portfolio",
     homeMenu: "Home",
     aboutMenu: "About me",
     projectsMenu: "Projects",
