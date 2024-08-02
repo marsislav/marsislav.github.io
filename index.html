@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marsislav - Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/all.css" />
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!--Light/ dark mode-->
+      <div class="theme-switch-wrapper">
+        <span id="toggle-icon">
+          <div class="toggle-text">Light mode</div>
+          <i class="fas fa-sun"></i>
+          <label class="theme-switch">
+            <input type="checkbox" />
+            <div class="slider round"></div>
+          </label>
+        </span>
+      </div>
+      <div class="language-switcher">
+        <button onclick="switchLanguage('bg')" class="bulgarian"></button>
+        <button onclick="switchLanguage('en')" class="english"></button>
+      </div>
+    </div>
+    <!--Navigation-->
+
+    <nav id="nav">
+      <div class="container">
+        <a href="#home" data-translate="homeMenu">Начало</a>
+        <a href="#about" data-translate="aboutMenu">За мен</a>
+        <a href="#projects" data-translate="projectsMenu">Проекти</a>
+        <a href="#contacts" data-translate="contactsMenu">За контакти</a>
+        <div class="menu-icon" onclick="toggleMenu()">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </div>
+    </nav>
+
+    <div id="mobile-menu" class="mobile-menu">
+      <div class="close-icon" onclick="toggleMenu()">&times;</div>
+      <a href="#home" data-translate="homeMenu">Начало</a>
+      <a href="#about" data-translate="aboutMenu">За мен</a>
+      <a href="#projects" data-translate="projectsMenu">Проекти</a>
+      <a href="#contacts" data-translate="contactsMenu">За контакти</a>
+    </div>
+
+    <div class="container">
+      <!--Home section-->
+      <section id="home">
+        <div class="title-group">
+          <img src="img/1.png" alt="Marsislav" class="introPic" />
+          <h1>&lt;marsislav /&gt;</h1>
+          <div data-translate="name" class="text-center">(Мирослав Костадинов)</div>
+          <h2 data-translate="job">Web разработчик</h2>
+        </div>
+      </section>
+      <!--About section-->
+      <section id="about">
+        <h3 data-translate="aboutTitle">За мен</h3>
+
+        <div class="text-center text-large">
+          <a href="#" class="roundedPhoto" target="_blank">
+            <img src="img/me.jpg" alt="Marsislav" class="author" />
+          </a>
+        </div>
+
+        <p data-translate="whoIam">Казвам се Мирослав Костадинов.</p>
+
+        <p data-translate="educationBasic">
+          Завърших бакалавърската си програма в Бургаски Свободен Университет
+          през 2013 година, специалност “Информатика и компютърни науки”, след
+          което изкарах магистърска си програма в същия университет, специалност
+          “Информационна сигурност”.
+        </p>
+        <p data-translate="bachelorDegree">
+          През бакалаварската си програма съм изучавал дисципини като компютърни
+          мрежи, изкуствен интелект, операционни системи, компютърни
+          архитектури, компютърна периферия и WEB приложения. В процеса на
+          обучение наблегнах на езици за front-end и back-end WEB разработки -
+          JavaScript и PHP
+        </p>
+        <p data-translate="masterDegree">
+          През магистърската си програма съм изучавал дисциплини като Мрежова
+          сигурност, маршрутизация в компютърните мрежи, сигурност в интернет
+          приложенията.
+        </p>
+
+        <p data-translate="aboutDesc0">
+          Занимавам се с изграждането и поддържането на различни WEB платформи и
+          приложения от 2014-та година. През годините съм работил с множество
+          технологии и рамки, включително:
+        </p>
+
+        <ul>
+          <li data-translate="aboutDesc1">
+        WordPress и Joomla разработчик: писал съм теми и плъгини, използвайки PHP, Vanilla
+        JavaScript, jQuery, HTML5 и CSS3.
+      </li> 
+        <li data-translate="aboutDesc2">Разработчик на онлайн казино игри: Front-end разработчик, като съм ползвал следните технологии jQuery, HTML5 и CSS3.</li> 
+        <li data-translate="aboutDesc3">Full-stack:
+        разработка: Имам професионален опит в работата с ASP.NET, както и с
+        Laravel, където съм изграждал цялостни уеб приложения, комбинирайки
+        сървърна и клиентска логика. 
+        </li>
+        <li data-translate="aboutDesc4">Фрийланс: В свободното си време работя като
+        фрийланс разработчик, като създавам и поддържам уеб сайтове и
+        приложения. Всички проекти в портфолиото ми са изработени самостоятелно,
+        съобразени с изискванията и нуждите на клиентите. Моята работа е израз
+        на страстта ми към уеб разработката и гордостта от това, че съм успял да
+        превърна хобито си в професия. Вярвам в качеството и ефективността и се
+        стремя да предлагам решения, които да отговарят на високите стандарти на
+        индустрията и нуждите на клиентите.</li>
+      </ul>
+        
+      </section>
+      <!--Projects-->
+      <section id="projects">
+        <h3 data-translate="projectsTitle">Проекти</h3>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="flip-card" onclick="openModal(this)">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img
+                    src="img/greenland.jpg"
+                    alt="Green Land Design"
+                    style="width: 300px; height: 300px"
+                  />
+                </div>
+                <div class="flip-card-back">
+                  <h4>Green Land Design</h4>
+                  <p class="small" data-translate="greenLandDesignDesc">
+                    Онлайн магазин и информация за дейността на фирма "Грийн Ланд
+                    Дизайн," София. Разработен е върху CMS Joomla, като темата е
+                    разработена от нулата, според изискванията на клиента.
+                    Завършен: март, 2016 г. Технологии: HTML5/CSS3/JS/PHP
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="flip-card" onclick="openModal(this)">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img
+                    src="img/capo.jpg"
+                    alt="Ресторант Capo"
+                    style="width: 300px; height: 300px"
+                  />
+                </div>
+                <div class="flip-card-back">
+                  <h4 data-translate="capoTitle">Ресторант "Capo"</h4>
+                  <p class="small" data-translate="capoDesc">
+                    WEB сайтът предоставя информация, виртуална разходка, галерия
+                    и форма за резервация на маса в средиземноморски ресторант
+                    "Capo", град София. Сайтът е двуезичен. Разработен е върху
+                    Wordpress CMS, като темата е разработена по дизайн на клиента.
+                    Завършен: септември, 2023 г. Технологии: HTML5/CSS3/JS/PHP
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="flip-card" onclick="openModal(this)">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img
+                    src="img/anel.jpg"
+                    alt="Хотел Анел"
+                    style="width: 300px; height: 300px"
+                  />
+                </div>
+                <div class="flip-card-back">
+                  <h4 data-translate="anelTitle">Хотел Анел, София</h4>
+                  <p class="small" data-translate="anelDesc">
+                    Многоезичен сайт предоставящ информация за верига хотели
+                    "Анел". Сайтът разполага с виртуална разходка и система за
+                    онлайн резервация на стая. Изграден е чрез Wordpress CMS, като
+                    темата е модифицирана според желанието на клиента. Завършен:
+                    март, 2022 г. Технологии: HTML5/CSS3/JS/PHP/MySQL
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="flip-card" onclick="openModal(this)">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img
+                    src="img/yana.jpg"
+                    alt="Туристическа агенция Яна Травел"
+                    style="width: 300px; height: 300px"
+                  />
+                </div>
+                <div class="flip-card-back">
+                  <h4 data-translate="yanaTitle">Туристическа агенция "Яна Травел"</h4>
+                  <p class="small" data-translate="yanaDesc">
+                    Сайтът предоставя информация за фирмата, актуални промоции
+                    както и най-посещаваните дестинации. Разработен е върху CMS
+                    Wordpress, като темата е разработена по дизайн на клиента.
+                    Завършен е през юни, 2019.
+                    Технологии: HTML5/CSS3/JS/PHP
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-30">
+          <div class="col-md-3">
+            <div class="flip-card" onclick="openModal(this)">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img
+                    src="img/techtronix.jpg"
+                    alt="TechTronix"
+                    style="width: 300px; height: 300px"
+                  />
+                </div>
+                <div class="flip-card-back">
+                  <h4>TechTronix</h4>
+                  <p class="small" data-translate="TechTronixDesc">
+                    Онлайн магазин за системи за сигурност на фирма "TechTronix", град София.
+Разработен е чрез Wordpress CMS, като темата е модифицирана според желанието на клиента.
+                    Завършен: юни, 2015 г. Технологии: HTML5/CSS3/JS/PHP
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="flip-card" onclick="openModal(this)">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img
+                    src="img/panclima.jpg"
+                    alt="Климатични системи Panclima"
+                    style="width: 300px; height: 300px"
+                  />
+                </div>
+                <div class="flip-card-back">
+                  <h4 data-translate="panclimaTitle">Климатични системи "PanClima"</h4>
+                  <p class="small" data-translate="panclimaDesc">
+                   Онлайн магазин за климатични системи на фирма "PanClima", град Пловдив.
+                    Разработен е чрез Wordpress CMS, като темата е модифицирана според желанието на клиента.
+                  
+                    Завършен: февруари, 2024 г. Технологии: HTML5/CSS3/JS/PHP
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <p>
+              <span data-translate="github">В моят GitHub профил съм публикувал още много проекти с различни
+              технологии! Разгледайте ги тук:</span> <a href="https://github.com/marsislav" target="_blank">https://github.com/marsislav</a> </p>
+              <p class="text-center" data-translate="critic">(приемам креативна критика)</p> 
+          </div>
+         
+        </div>
+  
+        <!-- The Modal -->
+        <div id="imageModal" class="modal">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <img class="modal-content" id="modalImage" />
+          <div id="caption"></div>
+        </div>
+      </div>
+  
+
+      <!--Contact-->
+      <section id="contacts">
+        <h3 data-translate="contactsTitle">За контакти</h3>
+        <p data-translate="contactsDesc">Мирослав Костадинов, <a href="tel:+359879445023">+359879445023</a></p>
+        <p>
+          <a href="mailto:mkostadinov87@gmail.com">mkostadinov87@gmail.com</a>
+        </p>
+        <i class="fa-brands fa-linkedin"></i>
+        <i class="fa-brands fa-github"></i>   
+        <i class="fa-brands fa-facebook"></i>   
+        <i class="fa-regular fa-file"></i>
+      </section>
+
+      <script src="app.js"></script>
+      <script src="modal.js"></script>
+      <script>
+        // Translations
+        const translations = {
+          bg: {
+
+            homeMenu: "Начало",
+            aboutMenu: "За мен",
+            projectsMenu: "Проекти",
+            contactsMenu: "За контакти",           
+            name:"(Миросляв Костадинов)",
+            job:"WEB разработчик",
+            aboutTitle: "За мен",
+            whoIam: "Казвам се Мирослав Костадинов",
+            educationBasic:
+              "Завърших бакалавърската си програма в Бургаски Свободен Университет през 2013 година, специалност 'Информатика и компютърни науки', след което изкарах  магистърска си  програма в същия университет, специалност 'Информационна сигурност'.",
+            bachelorDegree:
+              "През бакалаварската си програма съм изучавал дисципини като компютърни мрежи, изкуствен интелект, операционни системи, компютърни архитектури, компютърна периферия и WEB приложения. В процеса на обучение наблегнах на езици за front-end и back-end WEB разработки - JavaScript и PHP ",
+            masterDegree:
+              "През магистърската си програма съм изучавал дисциплини като Мрежова сигурност, маршрутизация в компютърните мрежи, сигурност в интернет приложенията.",
+            aboutDesc0: "Занимавам се с изграждането и поддържането на различни WEB платформи и приложения от 2014-та година. През годините съм работил с множество технологии и рамки, включително:",
+            aboutDesc1:"WordPress и Joomla разработчик: писал съм теми и плъгини, използвайки PHP, Vanilla JavaScript, jQuery, HTML5 и CSS3.",
+            aboutDesc2:"Разработчик на онлайн казино игри: Front-end разработчик, като съм ползвал следните технологии jQuery, HTML5 и CSS3.",
+            aboutDesc3:"Full-stack: разработка: Имам професионален опит в работата с ASP.NET, както и с Laravel, където съм изграждал цялостни уеб приложения, комбинирайки сървърна и клиентска логика.",
+            aboutDesc4:"Фрийланс: В свободното си време работя като фрийланс разработчик, като създавам и поддържам уеб сайтове и приложения. Всички проекти в портфолиото ми са изработени самостоятелно, съобразени с изискванията и нуждите на клиентите. Моята работа е израз на страстта ми към уеб разработката и гордостта от това, че съм успял да превърна хобито си в професия. Вярвам в качеството и ефективността и се стремя да предлагам решения, които да отговарят на високите стандарти на индустрията и нуждите на клиентите.",
+            projectsTitle:"Проекти",
+            greenLandDesignDesc:"Онлайн магазин и информация за дейността на фирма 'Грийн Ланд Дизайн',София. Разработен е върху CMS Joomla, като темата е разработена от нулата, според изискванията на клиента. Завършен: март, 2016 г. Технологии: HTML5/CSS3/JS/PHP",
+            TechTronixDesc:"Онлайн магазин за системи за сигурност на фирма 'TechTronix', град София. Разработен е чрез Wordpress CMS, като темата е модифицирана според желанието на клиента. Завършен: юни, 2015 г. Технологии: HTML5/CSS3/JS/PHP",
+            capoTitle:"Ресторант 'Capo'",
+            capoDesc:"WEB сайтът предоставя информация, виртуална разходка, галерия и форма за резервация на маса в средиземноморски ресторант 'Capo', град София. Сайтът е двуезичен. Разработен е върху Wordpress CMS, като темата е разработена по дизайн на клиента. Завършен: септември, 2023 г. Технологии: HTML5/CSS3/JS/PHP",
+            anelTitle:"Хотел 'Анел', София",
+            anelDesc:"Многоезичен сайт предоставящ информация за верига хотели 'Анел'. Сайтът разполага с виртуална разходка и система за онлайн резервация на стая. Изграден е чрез Wordpress CMS, като темата е модифицирана според желанието на клиента. Завършен e през март, 2022 г. Технологии: HTML5/CSS3/JS/PHP/MySQL.",
+            yanaTitle:"Туристическа агенция 'Яна Травел'",
+            yanaDesc:"Сайтът предоставя информация за фирмата, актуални промоции както и най-посещаваните дестинации. Разработен е върху CMS Wordpress, като темата е разработена по дизайн на клиента. Завършен е през юни, 2019. Технологии: HTML5/CSS3/JS/PHP",
+            panclimaTitle:"Климатични системи 'PanClima'",
+            panclimaDesc:"Онлайн магазин за клшматични системи на фирма 'PanClima', град Пловдив. Разработен е чрез Wordpress CMS, като темата е модифицирана според желанието на клиента. Завършен: февруари, 2024 г. Технологии: HTML5/CSS3/JS/PHP",
+            github:"В моят GitHub профил съм публикувал още много проекти с различни технологии! Разгледайте ги тук:",
+            critic:"(приемам креативна критика)",
+            contactsTitle:"За контакти",
+            contactsDesc:"Мирослав Костадинов, +359879445023",
+          },
+          en: {
+            homeMenu: "Home",
+            aboutMenu: "About me",
+            projectsMenu: "Projects",
+            contactsMenu: "Contacts",
+            name:"(Miroslav Kostadinov)",
+            job:"WEB developer",
+            aboutTitle: "About me",
+            whoIam: "My name is Miroslav Kostadinov",
+            educationBasic:
+              "I completed my Bachelor's degree in 'Informatics and Computer Science' at Burgas Free University in 2013, after which I pursued a Master's degree in 'Information Security' at the same university.",
+            bachelorDegree:
+              "During my Bachelor's program, I studied subjects such as computer networks, artificial intelligence, operating systems, computer architectures, computer peripherals, and web applications. Throughout my studies, I focused on languages for front-end and back-end web development, specifically JavaScript and PHP.",
+            masterDegree:
+              "During my Master's program, I studied courses such as Network Security, Routing in Computer Networks, and Security in Internet Applications.",
+            aboutDesc0: "I have been involved in building and maintaining various web platforms and applications since 2014. Over the years, I have worked with numerous technologies and frameworks, including:",
+            aboutDesc1:"WordPress and Joomla developer: I have written themes and plugins using PHP, Vanilla JavaScript, jQuery, HTML5, and CSS3",
+            aboutDesc2:"Online casino game developer: Front-end developer, using technologies such as jQuery, HTML5, and CSS3",
+            aboutDesc3:"Full-stack Development: I have professional experience working with ASP.NET as well as Laravel, where I have built complete web applications, combining both server-side and client-side logic.",
+            aboutDesc4:"Freelancing: In my free time, I work as a freelance developer, creating and maintaining websites and applications. All the projects in my portfolio are developed independently, tailored to the clients' requirements and needs. My work is an expression of my passion for web development and the pride I take in having turned my hobby into a profession. I believe in quality and efficiency and strive to provide solutions that meet the high standards of the industry and the needs of the clients.",
+            projectsTitle:"Projects",
+            TechTronixDesc:"Online store for security systems of the company 'TechTronix', Sofia. Developed using WordPress CMS, with the theme customized according to the client's requirements. Completed: June 2015. Technologies: HTML5/CSS3/JS/PHP",
+            greenLandDesignDesc:"Online store and information about the activities of the company 'Green Land Design', Sofia. It is developed on the Joomla CMS, with the theme built from scratch according to the client's requirements. Completed: March 2016. Technologies: HTML5/CSS3/JS/PHP",
+            capoTitle:"Restaurant 'Capo'",
+            capoDesc:"The website provides information, a virtual tour, a gallery, and a table reservation form for the Mediterranean restaurant 'Capo' in Sofia. The site is bilingual. It was developed using WordPress CMS, with the theme designed according to the client's specifications. Completed: September 2023. Technologies: HTML5/CSS3/JS/PHP.",
+            anelTitle:"Hotel 'Anel', Sofia",
+            anelDesc:"A multilingual website providing information about the 'Anel' hotel chain. The site features a virtual tour and an online room reservation system. It was built using WordPress CMS, with the theme customized according to the client's requirements. Completed in March 2022. Technologies: HTML5/CSS3/JS/PHP/MySQL.",
+            yanaTitle:"Touristic agency 'Yana Travel'",
+            yanaDesc:"The website provides information about the company, current promotions, and the most popular destinations. It was developed using WordPress CMS, with the theme designed according to the client's specifications. Completed in June 2019. Technologies: HTML5/CSS3/JS/PHP.",
+            panclimaTitle:"Air conditioning systems 'PanClima'",
+            panclimaDesc:"Online store for climate systems of the company 'PanClima', Plovdiv. Developed using WordPress CMS, with the theme customized according to the client's requirements. Completed: February 2024. Technologies: HTML5/CSS3/JS/PHP.",
+            github:"I have published many more projects with various technologies on my GitHub profile! Check them out here:",
+            critic:"(I accecpt creative criticism)",
+            contactsTitle:"Contacts",
+            contactsDesc:"Miroslav Kostadinov, +359879445023",
+
+
+            },
+        };
+
+        // Function to switch language
+        function switchLanguage(lang) {
+          const elements = document.querySelectorAll("[data-translate]");
+          elements.forEach((element) => {
+            const key = element.getAttribute("data-translate");
+            element.textContent = translations[lang][key];
+          });
+          localStorage.setItem("preferredLanguage", lang);
+          document.documentElement.lang = lang; // Set HTML lang attribute
+        }
+
+        // Load the preferred language from local storage or default to Bulgarian
+        document.addEventListener("DOMContentLoaded", () => {
+          const preferredLanguage =
+            localStorage.getItem("preferredLanguage") || "bg";
+          switchLanguage(preferredLanguage);
+        });
+      </script>
+    </div>
+  </body>
+</html>
