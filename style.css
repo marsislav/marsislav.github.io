@@ -59,8 +59,9 @@ li:first-letter {
   cursor: pointer;
   background-image: url("img/bg.png");
   width: 40px;
-  height: 40px;
-  background-size: cover;
+  height: 25px;
+  background-size: contain;
+  margin-right: 10px;
 }
 
 .english {
@@ -69,8 +70,8 @@ li:first-letter {
   cursor: pointer;
   background-image: url("img/uk.png");
   width: 40px;
-  height: 40px;
-  background-size: cover;
+  height: 25px;
+  background-size: contain;
 }
 
 /*Light/ dark mode*/
@@ -492,4 +493,9 @@ h3 {
 
 .mt-30 {
   margin-top: 30px !important;
+}
+
+.flip-card-front img {
+  width: 300px;
+  height: 300px;
 }
