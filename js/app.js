@@ -79,12 +79,21 @@ if (currentTheme) {
   }
 }
 
-//Mobile menu
 function toggleMenu() {
   const mobileMenu = document.getElementById("mobile-menu");
   mobileMenu.style.display =
     mobileMenu.style.display === "block" ? "none" : "block";
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const links = document.querySelectorAll("#mobile-menu a");
+  links.forEach(function (link) {
+    link.addEventListener("click", function () {
+      const mobileMenu = document.getElementById("mobile-menu");
+      mobileMenu.style.display = "none";
+    });
+  });
+});
 
 // Translations
 const translations = {
