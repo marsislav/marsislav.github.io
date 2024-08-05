@@ -79,6 +79,16 @@ if (currentTheme) {
   }
 }
 
+//Fucking desktop menu
+
+const list = document.querySelectorAll(".item");
+function activeLink() {
+  list.forEach((item) => item.classList.remove("active"));
+  this.classList.add("active");
+}
+
+list.forEach((item) => item.addEventListener("click", activeLink));
+//Mobile menu
 function toggleMenu() {
   const mobileMenu = document.getElementById("mobile-menu");
   mobileMenu.style.display =
@@ -213,3 +223,5 @@ document.addEventListener("DOMContentLoaded", () => {
   const preferredLanguage = localStorage.getItem("preferredLanguage") || "bg";
   switchLanguage(preferredLanguage);
 });
+
+//
